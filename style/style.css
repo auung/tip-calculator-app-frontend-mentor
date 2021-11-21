@@ -1,0 +1,279 @@
+:root {
+    --light: hsl(0, 0%, 100%);
+    --dark: hsl(183, 100%, 15%);
+    --primary: hsl(172, 67%, 45%);
+    --bg: hsl(185, 41%, 84%);
+    --input: hsl(189, 41%, 97%);
+    --label: hsl(186, 14%, 43%);
+    --label-light: hsl(184, 14%, 56%);
+    --error: hsl(353, 88%, 47%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
+
+body {
+    background: var(--bg);
+    color: var(--dark);
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+/*------------------
+	Style
+------------------*/
+
+main {
+    background: var(--light);
+    border-radius: 20px;
+}
+
+.label {
+    font-weight: 700;
+}
+
+.error {
+    color: var(--error);
+    font-weight: 700;
+    display: none;
+}
+
+.error-show {
+    display: block;
+}
+
+.input {
+    font-family: inherit;
+    background: var(--input);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: right;
+    direction: rlt;
+    border: none;
+    border-radius: 7px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.btn {
+    font-family: inherit;
+    font-size: 1.5rem;
+    border: none;
+    background: var(--dark);
+    color: var(--light);
+    border-radius: 7px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: var(--primary);
+    color: var(--dark);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.result {
+    background: var(--dark);
+    color: var(--primary);
+    border-radius: 15px;
+}
+
+.result-label {
+    color: var(--light);
+}
+
+.per-person {
+    color: var(--label-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.result-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.btn-reset {
+    background: var(--primary);
+    color: var(--dark);
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.btn-reset:hover {
+    background: var(--label);
+}
+
+.selected {
+    background: var(--primary);
+    color: var(--dark);
+    font-weight: 700;
+}
+
+@media (min-width: 925px) {
+    .btn {
+        font-size: 1.375rem;
+    }
+
+    .result-value {
+        font-size: 2.5rem;
+    }
+
+    .input {
+        font-size: 1.375rem;
+        text-indent: 0.65em;
+    }
+
+}
+
+/*------------------
+	Layout
+------------------*/
+
+.main-wrap {
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+}
+
+main {
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.75em;
+    margin: 0 auto;
+}
+
+.interactive {
+    width: 100%;
+    padding: 0.25em 0.5em 0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+.label-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    margin-bottom: 0.5em;
+}
+
+.input {
+    height: 47px;
+    min-width: 0;
+    padding-right: 0.75em;
+}
+
+.icon {
+    width: 11px;
+    position: absolute;
+    bottom: 14px;
+    left: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 47px);
+    grid-gap: 12px 16px;
+    margin: 0.5em 0 2em;
+}
+
+.btn {
+    border: none;
+    height: 47px;
+}
+
+.result {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1.25em 1.25em;
+}
+
+.result-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25em;
+}
+
+@media (min-width: 925px) {
+    .main-wrap {
+        max-height: 700px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        flex: 2;
+    }
+
+    header img {
+        object-fit: scale-down;
+    }
+
+    main {
+        flex-direction: row;
+        width: 900px;
+        height: 430px;
+        gap: 40px;
+        margin-bottom: 20px;
+    }
+
+    .interactive {
+        padding-top: 1.5em;
+        padding-left: 0.75em;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 45px);
+    }
+
+    .input,
+    .btn {
+        height: 43px;
+    }
+
+    .result {
+        width: 100%;
+        height: 100%;
+        padding: 3em 2.5em;
+        box-sizing: border-box;
+    }
+
+    .btn-reset {
+        margin-top: auto;
+    }
+
+}

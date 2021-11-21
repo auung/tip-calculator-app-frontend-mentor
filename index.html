@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution { font-size: 11px; text-align: center; }
+        .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+</head>
+
+<body>
+    <div class="main-wrap">
+        <header>
+            <img src="images/logo.svg">
+        </header>
+        <main>
+            <section class="interactive">
+                <div class="container">
+                    <label class="label">Bill</label>
+                    <input type="number" class="input" id="bill" placeholder="0">
+                    <img src="images/icon-dollar.svg" class="icon">
+                </div>
+                <div class="tip-container">
+                    <label class="label">Select Tip %</label>
+                    <div class="grid">
+                        <button class="btn btn-tip" id="5" onclick="radioChecked(this)">5%</button>
+                        <button class="btn btn-tip" id="10" onclick="radioChecked(this)">10%</button>
+                        <button class="btn btn-tip" id="15" onclick="radioChecked(this)">15%</button>
+                        <button class="btn btn-tip" id="25" onclick="radioChecked(this)">25%</button>
+                        <button class="btn btn-tip" id="50" onclick="radioChecked(this)">50%</button>
+                        <input type="number" class="input" id="custom-percent" placeholder="Custom" onclick="radioChecked(this)">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="label-flex">
+                        <label class="label">Number of People</label>
+                        <p class="error">Can't be zero</p>
+                    </div>
+                    <input type="number" class="input" id="people" placeholder="0">
+                    <img src="images/icon-person.svg" class="icon">
+                </div>
+            </section>
+            <section class="result">
+                <div class="result-wrap">
+                    <label class="result-label">Tip Amount<br><span class="per-person">/ person</span></label>
+                    <p class="result-value" id="tip">$0</p>
+                </div>
+                <div class="result-wrap">
+                    <label class="result-label">Total<br><span class="per-person">/ person</span></label>
+                    <p class="result-value" id="total">$0</p>
+                </div>
+                <button class="btn btn-reset" onclick="window.location.reload()">RESET</button>
+            </section>
+        </main>
+    </div>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">auung</a>.
+    </div>
+    <script type="text/javascript" src="script/script.js"></script>
+</body>
+
+</html>
